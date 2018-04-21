@@ -1,8 +1,0 @@
-//- index page
-mixin posts()
-	ul
-		- page.posts.each(function (post) {
-				li
-					h2!= post.title
-					p!= post.date.format('llll')
-		- })

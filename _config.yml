@@ -1,5 +1,7 @@
 menu:
-  首页: /
-  文章: /archives/
-  GitHub: https://github.com/bbbbx
-  Rss: /atom.xml
+	首页: /
+	归档: /archives/
+	GitHub: https://github.com/bbbbx
+	Rss: /atom.xml
+
+logo: /header.jpg

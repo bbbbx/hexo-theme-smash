@@ -1,0 +1,18 @@
+extends _partial/layout
+
+block site_title
+	!= page.title + " · " + config.title
+
+block description
+	- var desc = page.desc || page.title + ' - ' + config.author;
+	meta(name="description", content=desc)
+
+block content
+	include _mixins/post
+	+post(page)
+	aside.toc!= toc(page.content)
+
+block pagination
+	include _mixins/paginator
+	+postPaginator()
+	//- include partial/comment

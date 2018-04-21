@@ -1,0 +1,41 @@
+//- post info
+mixin postInfo(post)
+	.post-info
+		!= post.date.format('llll')
+		if post.from && (is_home() || is_post())
+			a.post-from(href=post.from target="_blank" title=post.from) 翻译 · 原文地址
+
+//- index page
+mixin posts()
+	ul.post-list
+		- page.posts.each(function (post) {
+				li.post-list-item
+					h2.post-list-item-title
+						a(href= url_for(post.path))!= post.title
+					p.post-list-item-date!= post.date.format('llll')
+					p!= post.excerpt
+		- })
+
+//- archive page
+mixin postList() 
+	.archive
+		- var year = 0;
+		- var change = false;
+		- page.posts.each(function (post) {
+				- var postYear = date(post.date, 'YYYY') - 0;
+				- change = year !== postYear;
+				- year = change ? itemYear : year;
+				if change
+					h2.archive-year!= year
+				.post-item
+					+postInfo(post)
+					a.post-title-link(href= url_for(post.path))
+						!= post.title
+		- })
+
+//- Post Page
+mixin post(post)
+	article.post-block
+		h1.post-title!= post.title
+		+postInfo(post)
+		.post-content!= post.content

@@ -1,8 +1,10 @@
-extends partial/layout
+extends _partial/layout
 
 block content
-	include mixins/post
+	include _mixins/post
 	+posts()
 
 block pagination
-	div pagination
+	include _mixins/paginator
+	+homePaginator()
+	include _partial/copyright
