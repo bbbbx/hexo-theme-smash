@@ -1,20 +1,32 @@
 $dark-color: #20232a;
 $primary-color: #61dafb;
 
+$link-background-color: rgba(187, 239, 253, 0.3);
+$link-hover-background-color: rgba(187, 239, 253, 1);
+$link-color: #1a1a1a;
+$link-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+$link-hover-border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+
+
+
 html {
   font-size: 16px;
 }
 
+body {
+  margin: 0;
+}
+
 header {
-  display: block;
+  display: flex;
+  position: fixed;
   box-sizing: border-box;
   height: 50px;
   margin: 0;
-  padding: 15px 0;
+  padding: 0;
   width: 100%;
   background-color: $dark-color; 
   color: white;
-  position: fixed;
   left: 0;
   top: 0;
   z-index: 1;
@@ -22,6 +34,7 @@ header {
 
 .navbar {
   display: flex;
+  align-items: center;
   width: 90%;
   margin: 0 auto;
   padding-left: 20px;
@@ -65,6 +78,7 @@ header {
 
     a.nav-link:focus {
       outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     a.nav-link:hover {
@@ -79,27 +93,15 @@ header {
 
 }
 
-.post-list {
-  .post-list-item {
-    list-style-type: none;
-   
-    .post-list-item-title {
-
-    }
-
-    .post-list-item-date {
-      
-    }
-  }
-}
-
 .content {
-  width: 100%;
-  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 
   article.post-block {
-    margin: 0 5%;
+    flex: 2;
     width: 60%;
+    max-width: 900px;
 
     .post-info {
       font-weight: 200;
@@ -167,12 +169,11 @@ header {
   }
 
   aside.toc {
-    width: 25%;
-    position: fixed;
-    height: 90%;
-    overflow: auto;
-    top: 50px;
-    right: 0;
+    flex: 1;
+    // position: fixed;
+    // top: 50px;
+    // right: 0;
+    // overflow: auto;
     background-color: #f7f7f7;
     color: #1a1a1a;
     list-style-type: none;
@@ -190,22 +191,116 @@ header {
   }
 }
 
+.post-list {
+  width: 60%;
+  max-width: 900px;
+  padding: 0;
+  margin: 0 auto;
+  
+  .post-list-item {
+    list-style-type: none;
+    
+    .post-list-item-title {
+      a {
+        text-decoration: none;
+        color: $link-color;
+        background-color: $link-background-color;
+        border-bottom: $link-border-bottom;
+      }
+      
+      a:hover {
+        background-color: $link-hover-background-color;
+        border-bottom: $link-hover-border-bottom;
+      }
+    }
+
+    .post-list-item-date {
+      font-weight: 300;
+      font-size: .8rem;
+      color: #858585;
+    }
+  }
+}
+
+.archive {
+  width: 60%;
+  max-width: 700px;
+  margin: 0 auto;
+
+  .archive-year {
+
+  }
+
+  .post-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .post-info {
+      flex: 1;
+      font-weight: 300;
+      font-size: .8rem;
+      color: #858585;
+      line-height: 2;
+    }
+
+    a.post-title-link {
+      flex: 2;
+      text-decoration: none;
+      background-color: rgba(187, 239, 253, 0.3);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      color: #1a1a1a;
+      text-decoration: none;
+      margin: 5px;
+      padding: 5px;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    a.post-title-link:hover {
+      background-color: rgba(187, 239, 253, 1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
 footer {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  margin: 0;
 
   .paginator {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
     
-    .prev {
-
+    a {
+      padding: 10px;
+      text-decoration: none;
+      color: $link-color;
+      border-bottom: $link-border-bottom;
+      background-color: rgba(187, 239, 253, 0.3);
+    }
+    
+    a.prev {
+      margin-right: 20px;
+    }
+    
+    a.next {
+      margin-left: 20px;
+    }
+    
+    a:hover {
+      background-color: $link-hover-background-color;
+      border-bottom: $link-hover-border-bottom;
     }
 
-    .next {
-
-    }
   }
 
   .copyright {
-
+    background-color: $dark-color;
+    color: white;
+    padding: 10px 0;
   }
 }

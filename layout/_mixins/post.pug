@@ -14,6 +14,8 @@ mixin posts()
 						a(href= url_for(post.path))!= post.title
 					p.post-list-item-date!= post.date.format('llll')
 					p!= post.excerpt
+						!= post.excerpt
+					a.read-more(href= url_for(post.path))!= __('more')
 		- })
 
 //- archive page
@@ -24,13 +26,13 @@ mixin postList()
 		- page.posts.each(function (post) {
 				- var postYear = date(post.date, 'YYYY') - 0;
 				- change = year !== postYear;
-				- year = change ? itemYear : year;
+				- year = change ? postYear : year;
 				if change
 					h2.archive-year!= year
 				.post-item
-					+postInfo(post)
 					a.post-title-link(href= url_for(post.path))
 						!= post.title
+					+postInfo(post)
 		- })
 
 //- Post Page
