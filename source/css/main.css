@@ -4,6 +4,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #FFFFFF;
 }
 
 header {
@@ -14,11 +15,45 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #20232a;
+  background-color: #3C3C3C;
   color: white;
   left: 0;
   top: 0;
   z-index: 1;
+}
+
+code {
+  background-color: #FEDCD2;
+  color: #DF744A;
+  padding: 0 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  margin-left: 0.2rem;
+  margin-right: 0.4rem;
+}
+
+a {
+  color: #3C3C3C;
+  text-decoration: none;
+  border-bottom: 1px solid #D40E52;
+}
+
+a:focus {
+  font-weight: 600;
+}
+
+a:hover {
+  font-weight: 600;
+  border-bottom: 2px solid #D40E52;
+}
+
+em {
+  text-shadow: 0.1rem 0.1rem 0.1rem #3C3C3C;
+}
+
+strong {
+  color: #D40E52;
 }
 
 .navbar {
@@ -34,37 +69,44 @@ header {
   display: flex;
   color: #61dafb;
   text-decoration: none;
+  border: 0;
 }
 .navbar a.logo img {
-  height: 20px;
+  height: 2.2rem;
   flex: 1;
 }
 .navbar a.logo .author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
-  flex: 2;
+  flex: 3;
 }
 .navbar nav {
   flex: 7;
   display: flex;
+  height: 100%;
   background-color: transparent;
-  text-align: center;
 }
 .navbar nav a.nav-link {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
+  color: white;
+  border: 0;
 }
 .navbar nav a.nav-link:link {
-  color: #ccc;
-}
-.navbar nav a.nav-link:visited {
-  color: #ccc;
+  color: white;
 }
 .navbar nav a.nav-link:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.2);
 }
 .navbar nav a.nav-link:hover {
-  background-color: #eb5151;
+  color: #61dafb;
+  border-bottom: 3px solid #61dafb;
 }
 .content {
   margin: 0 auto;
@@ -75,46 +117,63 @@ header {
   flex: 2;
   width: 60%;
   max-width: 900px;
+  margin: 0 2rem;
+  overflow: auto;
 }
 .content article.post-block .post-info {
   font-weight: 200;
   font-size: 1rem;
   color: #858585;
 }
+.content article.post-block figure {
+  width: 80%;
+}
+.content article.post-block figure table {
+  width: 90%;
+}
+.content article.post-block img {
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+}
 .content article.post-block h1 {
   background-color: #333;
   color: white;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 2rem;
   margin: 0.5rem 0;
-  text-indent: 1rem;
+  padding-left: 1rem;
 }
 .content article.post-block h2 {
-  background-color: #333;
-  color: white;
-  text-indent: 2rem;
-  font-weight: 500;
+  color: #3C3C3C;
+  font-weight: 700;
   font-size: 1.6rem;
-  padding-right: 0.3em;
-  margin: 0.3rem 10rem 0.3rem 0.3rem;
+  border-bottom: 3px solid #3C3C3C;
+  display: flex;
+  align-items: center;
+}
+.content article.post-block h2::before {
+  content: "";
+  border-width: 0.6rem 0 0.6rem 0.8rem;
+  border-color: transparent transparent transparent #3C3C3C;
+  border-style: solid;
+  margin-right: 0.5rem;
 }
 .content article.post-block h3 {
-  background-color: #333;
-  color: white;
-  text-indent: 2rem;
-  font-weight: 300;
+  color: #3C3C3C;
+  font-weight: 600;
   font-size: 1.3rem;
-  padding-right: 0.3em;
-  margin: 0.1rem 10rem 0.1rem 0.5rem;
+  border-bottom: 1px dashed #3C3C3C;
 }
 .content article.post-block h4, .content article.post-block h5, .content article.post-block h6 {
-  background-color: #333;
-  color: white;
-  text-indent: 2rem;
-  font-weight: 200;
+  color: #3C3C3C;
+  font-weight: 500;
   font-size: 1.1rem;
-  padding-right: 0.3em;
-  margin: 0.1rem 10rem 0.1rem 0.7rem;
+  border-bottom: 1px dotted #3C3C3C;
+}
+.content article.post-block p {
+  text-indent: 2rem;
 }
 .content article.post-block a {
   background-color: rgba(187, 239, 253, 0.3);
@@ -136,7 +195,12 @@ header {
   flex: 1;
   background-color: #f7f7f7;
   color: #1a1a1a;
+  padding: 0;
+  overflow: auto;
+}
+.content aside.toc ol {
   list-style-type: none;
+  padding-left: 1.3rem;
 }
 .content aside.toc li a {
   text-decoration: none;
@@ -167,7 +231,7 @@ header {
 .post-list .post-list-item .post-list-item-date {
   font-weight: 300;
   font-size: 0.8rem;
-  color: #858585;
+  color: #3C3C3C;
 }
 
 .archive {

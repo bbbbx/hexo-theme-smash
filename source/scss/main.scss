@@ -1,5 +1,10 @@
 $dark-color: #20232a;
 $primary-color: #61dafb;
+$color-background: #FFFFFF;
+$color-yellow: #FCDF15;
+$color-red: #D40E52;
+$color-blue: #0B99BC;
+$color-black: #3C3C3C;
 
 $link-background-color: rgba(187, 239, 253, 0.3);
 $link-hover-background-color: rgba(187, 239, 253, 1);
@@ -15,6 +20,7 @@ html {
 
 body {
   margin: 0;
+  background-color: $color-background;
 }
 
 header {
@@ -25,11 +31,57 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: $dark-color; 
+  background-color: $color-black;
   color: white;
   left: 0;
   top: 0;
   z-index: 1;
+}
+
+code {
+  background-color: #FEDCD2;
+  color: #DF744A;
+  padding: 0 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: .3rem;
+  margin-left: .2rem;
+  margin-right: .4rem;
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+  border-bottom: 1px solid $color-red;
+}
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+a:focus {
+  font-weight: 600;
+}
+
+a:hover {
+  font-weight: 600;
+  border-bottom: 2px solid $color-red;
+}
+
+a:active {
+
+}
+
+em {
+  text-shadow: .1rem .1rem .1rem $color-black;
+}
+
+strong {
+  color: $color-red;
 }
 
 .navbar {
@@ -45,35 +97,40 @@ header {
     display: flex;
     color: $primary-color;
     text-decoration: none;
+    border: 0;
 
     img {
-      height: 20px;
+      height: 2.2rem;
       flex: 1;
     }
 
     .author {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-weight: 700;
-      flex: 2;
+      flex: 3;
     }
   }
 
   nav {
     flex: 7;
     display: flex;
+    height: 100%;
     background-color: transparent; 
-    text-align: center;
 
     a.nav-link {
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-decoration: none;
+      color: white;
+      border: 0;
     }
 
     a.nav-link:link {
-      color: #ccc;
-    }
-
-    a.nav-link:visited {
-      color: #ccc;
+      color: white;
     }
 
     a.nav-link:focus {
@@ -82,7 +139,8 @@ header {
     }
 
     a.nav-link:hover {
-      background-color: #eb5151;
+      color: $primary-color;
+      border-bottom: 3px solid $primary-color;
     }
 
     a.nav-link:active {
@@ -102,6 +160,8 @@ header {
     flex: 2;
     width: 60%;
     max-width: 900px;
+    margin: 0 2rem;
+    overflow: auto;
 
     .post-info {
       font-weight: 200;
@@ -109,43 +169,63 @@ header {
       color: #858585;
     }
 
+    figure {
+      width: 80%;
+      
+      table {
+        width: 90%;
+      }
+    }
+
+    img {
+      width: 70%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: block;
+    }
+
     h1 {
       background-color: #333; 
       color: white;  
-      font-weight: 700; 
+      font-weight: 800; 
       font-size: 2rem;  
       margin: .5rem 0;
-      text-indent: 1rem;
+      padding-left: 1rem;
     }
 
     h2 {
-      background-color: #333; 
-      color: white; 
-      text-indent: 2rem; 
-      font-weight: 500; 
-      font-size: 1.6rem; 
-      padding-right: .3em; 
-      margin: .3rem 10rem .3rem .3rem;
+      color: $color-black;
+      font-weight: 700; 
+      font-size: 1.6rem;
+      border-bottom: 3px solid $color-black;
+      display: flex;
+      align-items: center;
+    }
+
+    h2::before {
+      content: '';
+      border-width: .6rem 0 .6rem .8rem;
+      border-color: transparent transparent transparent $color-black;
+      border-style: solid;
+      margin-right: .5rem;
     }
 
     h3 {
-      background-color: #333; 
-      color: white; 
-      text-indent: 2rem; 
-      font-weight: 300; 
-      font-size: 1.3rem; 
-      padding-right: .3em; 
-      margin: .1rem 10rem .1rem .5rem; 
+      color: $color-black;  
+      font-weight: 600; 
+      font-size: 1.3rem;
+      border-bottom: 1px dashed $color-black;
     }
 
     h4, h5, h6 {
-      background-color: #333; 
-      color: white; 
-      text-indent: 2rem; 
-      font-weight: 200; 
+      color: $color-black; 
+      font-weight: 500; 
       font-size: 1.1rem; 
-      padding-right: .3em; 
-      margin: .1rem 10rem .1rem .7rem;
+      border-bottom: 1px dotted $color-black;
+    }
+
+    p {
+      text-indent: 2rem;
     }
 
     a {
@@ -170,13 +250,14 @@ header {
 
   aside.toc {
     flex: 1;
-    // position: fixed;
-    // top: 50px;
-    // right: 0;
-    // overflow: auto;
     background-color: #f7f7f7;
     color: #1a1a1a;
-    list-style-type: none;
+    padding: 0;
+    overflow: auto;
+    ol {
+      list-style-type: none;
+      padding-left: 1.3rem;
+    }
     
     li {
       
@@ -217,7 +298,7 @@ header {
     .post-list-item-date {
       font-weight: 300;
       font-size: .8rem;
-      color: #858585;
+      color: $color-black;
     }
   }
 }
