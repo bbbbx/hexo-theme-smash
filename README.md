@@ -1,1 +1,1 @@
-# hexo-theme-vq
+# hexo-theme-smash

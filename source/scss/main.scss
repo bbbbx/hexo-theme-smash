@@ -12,6 +12,7 @@ $link-color: #1a1a1a;
 $link-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 $link-hover-border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 
+@import "_partial/post";
 
 
 html {
@@ -38,16 +39,16 @@ header {
   z-index: 1;
 }
 
-code {
-  background-color: #FEDCD2;
-  color: #DF744A;
-  padding: 0 5px;
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: .3rem;
-  margin-left: .2rem;
-  margin-right: .4rem;
-}
+// code {
+//   background-color: #FEDCD2;
+//   color: #DF744A;
+//   padding: 0 5px;
+//   font-weight: 500;
+//   font-size: 1rem;
+//   border-radius: .3rem;
+//   margin-left: .2rem;
+//   margin-right: .4rem;
+// }
 
 a {
   color: $color-black;
@@ -156,120 +157,6 @@ strong {
   display: flex;
   flex-direction: row;
 
-  article.post-block {
-    flex: 2;
-    width: 60%;
-    max-width: 900px;
-    margin: 0 2rem;
-    overflow: auto;
-
-    .post-info {
-      font-weight: 200;
-      font-size: 1rem;
-      color: #858585;
-    }
-
-    figure {
-      width: 80%;
-      
-      table {
-        width: 90%;
-      }
-    }
-
-    img {
-      width: 70%;
-      max-width: 600px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    h1 {
-      background-color: #333; 
-      color: white;  
-      font-weight: 800; 
-      font-size: 2rem;  
-      margin: .5rem 0;
-      padding-left: 1rem;
-    }
-
-    h2 {
-      color: $color-black;
-      font-weight: 700; 
-      font-size: 1.6rem;
-      border-bottom: 3px solid $color-black;
-      display: flex;
-      align-items: center;
-    }
-
-    h2::before {
-      content: '';
-      border-width: .6rem 0 .6rem .8rem;
-      border-color: transparent transparent transparent $color-black;
-      border-style: solid;
-      margin-right: .5rem;
-    }
-
-    h3 {
-      color: $color-black;  
-      font-weight: 600; 
-      font-size: 1.3rem;
-      border-bottom: 1px dashed $color-black;
-    }
-
-    h4, h5, h6 {
-      color: $color-black; 
-      font-weight: 500; 
-      font-size: 1.1rem; 
-      border-bottom: 1px dotted $color-black;
-    }
-
-    p {
-      text-indent: 2rem;
-    }
-
-    a {
-      background-color: rgba(187, 239, 253, 0.3);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      color: #1a1a1a;
-      text-decoration: none;
-    }
-
-    a:hover {
-      background-color: rgba(187, 239, 253, 1);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-    }
-
-    blockquote {
-      font-weight: 300;
-      font-size: 1.125rem;
-      color: #858585;
-      line-height: 2;
-    }
-  }
-
-  aside.toc {
-    flex: 1;
-    background-color: #f7f7f7;
-    color: #1a1a1a;
-    padding: 0;
-    overflow: auto;
-    ol {
-      list-style-type: none;
-      padding-left: 1.3rem;
-    }
-    
-    li {
-      
-      a {
-        text-decoration: none;
-      }
-    }
-    
-    ol {
-      margin: 0;
-    }
-  }
 }
 
 .post-list {
