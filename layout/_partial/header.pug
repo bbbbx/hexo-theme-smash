@@ -1,5 +1,5 @@
 div.navbar
-	a.logo(href="/")
+	a.logo(href=url_for("/"))
 		if theme.logo
 			img(src=theme.logo alt="make sure _config.yml's logo avalidable")
 		span.author!= config.author

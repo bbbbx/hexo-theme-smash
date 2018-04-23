@@ -27,6 +27,6 @@ mixin post(post)
 			if post.photos.length !== 0
 				.gallery-photos
 					each val in post.photos
-						img(src=val alt=val title=val)
+						img(src=url_for(val) alt=url_for(val) title=val)
 			hr
 		.post-content!= post.content
