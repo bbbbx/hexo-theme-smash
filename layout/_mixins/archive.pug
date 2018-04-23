@@ -18,7 +18,7 @@ mixin postList()
 
 mixin tagsList()
 	.archive
-		.title!= page.tag
+		.archive-year!= page.tag
 		- page.posts.each(function (post) {
 				.post-item
 					a.post-title-link(href= url_for(post.path))
@@ -29,7 +29,7 @@ mixin tagsList()
 
 mixin categoriesList()
 	.archive
-		.title!= page.category
+		.archive-year!= page.category
 		- page.posts.each(function (post) {
 				.post-item
 					a.post-title-link(href= url_for(post.path))
