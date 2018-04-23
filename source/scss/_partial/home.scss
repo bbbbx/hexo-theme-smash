@@ -1,0 +1,41 @@
+.post-list {
+  width: 60%;
+  max-width: 900px;
+  padding: 0;
+  margin: 0 auto;
+  
+  .post-list-item {
+    list-style-type: none;
+    
+    .post-list-item-title {
+      a {
+        text-decoration: none;
+        color: $link-color;
+        background-color: $link-background-color;
+        border-bottom: $link-border-bottom;
+      }
+      
+      a:hover {
+        background-color: $link-hover-background-color;
+        border-bottom: $link-hover-border-bottom;
+      }
+    }
+
+    .post-list-item-date {
+      font-weight: 300;
+      font-size: .8rem;
+      color: $color-black;
+    }
+
+    a.read-more {
+      font-size: .9rem;
+      text-decoration: none;
+      color: $color-red;
+    }
+
+    a.read-more:hover {
+      border-bottom: 1px solid $color-red;
+      font-weight: 600;
+    }
+  }
+}

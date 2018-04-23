@@ -1,0 +1,9 @@
+extends _partial/layout
+
+block content
+	include _mixins/archive
+	+tagsList()
+
+block pagination
+	include _mixins/paginator
+	+homePaginator()

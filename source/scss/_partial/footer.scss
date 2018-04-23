@@ -1,0 +1,51 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+
+  .paginator {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    
+    a {
+      padding: 10px;
+      text-decoration: none;
+      color: $link-color;
+      border-bottom: $link-border-bottom;
+      background-color: rgba(187, 239, 253, 0.3);
+    }
+    
+    a.prev {
+      margin-right: 20px;
+    }
+    
+    a.next {
+      margin-left: 20px;
+    }
+    
+    a:hover {
+      background-color: $link-hover-background-color;
+      border-bottom: $link-hover-border-bottom;
+    }
+
+  }
+
+  .copyright {
+    background-color: $dark-color;
+    color: #F7F7F7;
+    padding: 2rem 0;
+    p {
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $color-red;
+    }
+    a:hover {
+      font-weight: 800;
+      border-bottom: 1px dotted white;
+    }
+  }
+}

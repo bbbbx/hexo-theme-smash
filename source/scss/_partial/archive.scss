@@ -1,0 +1,109 @@
+.title,
+.archive-year {
+  background-color: #333; 
+  color: white;  
+  font-weight: 800; 
+  font-size: 2rem;  
+  margin: .5rem 0;
+  padding-left: 1rem;
+}
+
+.categories,
+.tags,
+.archive {
+  width: 90%;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+.categories {
+  .category-link {
+    color: $color-black;
+    background-color: rgba($color-yellow, 0.5);
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 1.2rem;
+    .category-count {
+      margin-left: 2px;
+      margin-right: 2px;
+      color: white;
+    }
+  }
+  .category-link:hover {
+    font-weight: 600;
+    background-color: $color-yellow;
+    border-bottom: 1px solid $color-black;
+  }
+  .category-link:first-of-type {
+    margin-left: 0
+  }
+  .category-link:last-of-type {
+    margin-right: 0
+  }
+}
+
+.tags {
+  .tag-link {
+    color: $color-black;
+    background-color: rgba($color-red, 0.5);
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 1.2rem;
+    .tag-count {
+      margin-left: 2px;
+      margin-right: 2px;
+      color: white;
+    }
+  }
+  .tag-link:hover {
+    font-weight: 600;
+    background-color: $color-red;
+    border-bottom: 1px solid $color-black;
+  }
+  .tag-link:first-of-type {
+    margin-left: 0
+  }
+  .tag-link:last-of-type {
+    margin-right: 0
+  }
+}
+
+.archive {
+  .post-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .post-info {
+      flex: 1;
+      font-weight: 300;
+      font-size: .8rem;
+      color: #858585;
+      line-height: 2;
+    }
+
+    a.post-title-link {
+      flex: 2;
+      text-decoration: none;
+      background-color: rgba(187, 239, 253, 0.3);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      color: #1a1a1a;
+      text-decoration: none;
+      margin: 5px;
+      padding: 5px;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    a.post-title-link:hover {
+      background-color: rgba(187, 239, 253, 1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    }
+  }
+}

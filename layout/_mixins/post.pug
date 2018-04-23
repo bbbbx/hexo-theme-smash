@@ -1,9 +1,7 @@
 //- post info
 mixin postInfo(post)
 	.post-info
-		!= post.date.format('llll')
-		if post.from && (is_home() || is_post())
-			a.post-from(href=post.from target="_blank" title=post.from) 翻译 · 原文地址
+		!= date(post.date, 'YYYY/MM/DD')
 
 //- index page
 mixin posts()
@@ -12,32 +10,23 @@ mixin posts()
 				li.post-list-item
 					h2.post-list-item-title
 						a(href= url_for(post.path))!= post.title
-					p.post-list-item-date!= post.date.format('llll')
+					p.post-list-item-date!= date(post.date, 'YYYY/MM/DD')
 					p!= post.excerpt
-						!= post.excerpt
 					a.read-more(href= url_for(post.path))!= __('more')
-		- })
-
-//- archive page
-mixin postList() 
-	.archive
-		- var year = 0;
-		- var change = false;
-		- page.posts.each(function (post) {
-				- var postYear = date(post.date, 'YYYY') - 0;
-				- change = year !== postYear;
-				- year = change ? postYear : year;
-				if change
-					h2.archive-year!= year
-				.post-item
-					a.post-title-link(href= url_for(post.path))
-						!= post.title
-					+postInfo(post)
+					hr
 		- })
 
 //- Post Page
 mixin post(post)
 	article.post-block
-		h1.post-title!= post.title
-		+postInfo(post)
+		.front-matter
+			h1.post-title!= post.title
+			+postInfo(post)
+			!= list_categories(post.categories, { show_count: false, style: 'a', separator: '=>' })
+			!= list_tags(post.tags, { show_count: false, style: 'a' })
+			if post.photos.length !== 0
+				.gallery-photos
+					each val in post.photos
+						img(src=val alt=val title=val)
+			hr
 		.post-content!= post.content

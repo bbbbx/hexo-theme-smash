@@ -1,280 +1,479 @@
+.content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+	min-height: 500px;
+	padding-top: 50px;
+}
+
 article.post-block {
-  flex: 2;
-  width: 60%;
-  max-width: 900px;
-  margin: 0 2rem;
-  overflow: auto;
+	flex: 2;
+	width: 90%;
+	max-width: 900px;
+	margin: 0 2rem;
+	overflow: auto;
 
-  .post-info {
-    font-weight: 200;
-    font-size: 1rem;
-    color: #858585;
-  }
+	.front-matter {
+		.post-title {
+			background-color: #333; 
+			color: white;  
+			font-weight: 800; 
+			font-size: 2rem;  
+			margin: .5rem 0;
+			padding-left: 1rem;
+		}
+		.post-info {
+			font-weight: 200;
+			font-size: 1rem;
+			color: #858585;
+		}
+		.category-link {
+			color: $color-black;
+      background-color: rgba($color-yellow, 0.5);
+			text-decoration: none;
+			border-radius: 3px;
+      padding-left: 3px;
+      padding-right: 3px;
+		}
+		.category-link:hover {
+			background-color: $color-yellow;
+      border-bottom: 1px solid $color-black;
+		}
+		.tag-link {
+			color: $color-black;
+      background-color: rgba($color-red, 0.5);
+      text-decoration: none;
+      border-radius: 3px;
+      padding-left: 3px;
+      padding-right: 3px;
+		}
+		.tag-link:hover {
+			background-color: $color-red;
+      border-bottom: 1px solid $color-black;
+		}
+		.gallery-photos {
+			background-color: $color-black;
+			border-radius: 10px;
+			height: 200px;
+			display: flex;
+			overflow-x: auto;
+			img {
+				height: 100%;
+				// margin-right: 1%;	
+				width: auto;
+			}
+		}
+	}
 
-  img {
-    width: 70%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
-  }
+	
 
-  h1 {
-    background-color: #333; 
-    color: white;  
-    font-weight: 800; 
-    font-size: 2rem;  
-    margin: .5rem 0;
-    padding-left: 1rem;
-  }
+	img {
+		width: 70%;
+		max-width: 600px;
+		margin: 0 auto;
+		display: block;
+	}
 
-  h2 {
-    color: $color-black;
-    font-weight: 700; 
-    font-size: 1.6rem;
-    border-bottom: 3px solid $color-black;
-    display: flex;
-    align-items: center;
-  }
+	u {
+		text-decoration: underline wavy $color-red;
+	}
 
-  h2::before {
-    content: '';
-    border-width: .6rem 0 .6rem .8rem;
-    border-color: transparent transparent transparent $color-black;
-    border-style: solid;
-    margin-right: .5rem;
-  }
+	del {
+		text-decoration: line-through double $color-red;
+	}
 
-  h3 {
-    color: $color-black;  
-    font-weight: 600; 
-    font-size: 1.3rem;
-    border-bottom: 1px dashed $color-black;
-  }
+	strong, em {
+		color: $color-red;
+	}
 
-  h4, h5, h6 {
-    color: $color-black; 
-    font-weight: 500; 
-    font-size: 1.1rem; 
-    border-bottom: 1px dotted $color-black;
-  }
+	strong {
+		font-weight: 700;
+	}
 
-  p {
-    text-indent: 2rem;
-  }
+	em {
+		font-style: italic;
+	}
 
-  a {
-    background-color: rgba(187, 239, 253, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    color: #1a1a1a;
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
+	
+	a:link {
+		color: $color-black;
+		border-bottom: 1px solid $color-black;
+	}
+	
+	a:visited {
 
-  a:hover {
-    background-color: rgba(187, 239, 253, 1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  }
+	}
+	
+	a:focus {
+		font-weight: 600;
+	}
+	
+	a:hover {
+		font-weight: 600;
+		border-bottom: 2px solid $color-black;
+	}
+	
+	a:active {
+	
+	}
 
-  blockquote {
-    font-weight: 300;
-    font-size: 1.125rem;
-    color: #858585;
-    line-height: 2;
-  }
+	h1 {
+		background-color: #333; 
+		color: white;  
+		font-weight: 800; 
+		font-size: 2rem;  
+		margin: .5rem 0;
+		padding-left: 1rem;
+	}
+
+	h2, h3, h4, h5, h6 {
+		color: $color-black;
+	}
+
+	h2 {
+		font-weight: 700; 
+		font-size: 1.6rem;
+		border-bottom: 3px solid $color-black;
+		display: flex;
+		align-items: center;
+	}
+
+	h2::before {
+		content: '';
+		border-width: .6rem 0 .6rem .8rem;
+		border-color: transparent transparent transparent $color-black;
+		border-style: solid;
+		margin-right: .5rem;
+	}
+
+	h3 {
+		font-weight: 600; 
+		font-size: 1.3rem;
+		border-bottom: 1px dashed $color-black;
+	}
+
+	h4, h5, h6 {
+		font-weight: 500; 
+		font-size: 1.1rem; 
+		border-bottom: 1px dotted $color-black;
+	}
+
+	table {
+		border-collapse: collapse;
+		border: 2px solid $color-black;
+		width: 100%;
+		max-width: 700px;
+
+		thead {
+			background-color: $color-black;
+			color: white;
+		}
+		
+		tbody {
+			tr:nth-of-type(even) {
+				background-color: #f8f8f8;
+			}
+			
+			tr:nth-of-type(odd) {
+				background-color: #ccc;
+			}
+			
+		}
+
+		td, th {
+			border-right: 1px solid $color-black;
+		}
+
+	}
+
+	p {
+		text-indent: 2rem;
+	}
+
+	a {
+		background-color: rgba(187, 239, 253, 0.3);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		color: #1a1a1a;
+		text-decoration: none;
+	}
+
+	a:hover {
+		background-color: rgba(187, 239, 253, 1);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+	}
+
+	blockquote {
+		font-weight: 300;
+		font-size: 1.125rem;
+		color: #858585;
+		line-height: 1.5;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: upper-roman;
+	}
+
+	cite,
+	abbr,
+	acronym {
+		text-decoration: none;
+		border-bottom: 1px dotted $color-black;
+	}
+
+	cite:hover,
+	abbr:hover,
+	acronym:hover {
+		background-color: $color-black;
+		color: white;
+		cursor: help;
+	}
+
+	
 }
 
 aside.toc {
-  flex: 1;
-  background-color: #f7f7f7;
-  color: #1a1a1a;
-  padding: 0;
-  overflow: auto;
-  ol {
-    list-style-type: none;
-    padding-left: 1.3rem;
-  }
-  
-  li {
-    
-    a {
-      text-decoration: none;
-    }
-  }
-  
-  ol {
-    margin: 0;
-  }
+	flex: 1;
+	background-color: #f7f7f7;
+	padding: 0;
+	overflow: auto;
+	ol {
+		padding-left: 1rem;
+	}
+	li {
+		list-style-type: none;
+	}
+	.toc-level-1,
+	.toc-level-2,
+	.toc-level-3,
+	.toc-level-4,
+	.toc-level-5,
+	.toc-level-6 {
+		.toc-link {
+			color: $color-black;
+			text-decoration: none;
+		}
+	}
+	.toc-level-1 > .toc-link > .toc-text {
+		background-color: $color-black;
+		color: white;
+		font-weight: 800;
+		font-size: 1.3rem;
+	}
+	.toc-level-2 > .toc-link > .toc-text{
+		border-bottom: 2px solid $color-black;
+		font-weight: 600;
+		font-size: 1.1rem;
+		display: inline-flex;
+		align-items: center;
+	}
+	.toc-level-2 > .toc-link > .toc-text::before{
+		content: '';
+		border-width: 5px 0 5px 7px;
+		border-color: transparent transparent transparent $color-black;
+		border-style: solid;
+		margin-right: 2px;
+	}
+	.toc-level-3 > .toc-link > .toc-text{
+		border-bottom: 1px dashed $color-black;
+		font-weight: 400;
+		font-size: .9rem;
+	}
+	.toc-level-4 > .toc-link > .toc-text,
+	.toc-level-5 > .toc-link > .toc-text, 
+	.toc-level-6 > .toc-link > .toc-text,  {
+		border-bottom: 1px dotted $color-black;
+		font-weight: 200;
+		font-size: .7rem;
+	}
 }
 
+@media screen and (max-width: 900px) {
+	.content {
+		flex-direction: column;
+	}
+	.post-block {
+		margin: 0 1rem;
+	}
+}
 
 // code highlight
-code {
-  font-size: 0.8em;
-  background-color: #FEDCD2;
-  font-family: 'Roboto Mono', Monaco, courier, monospace;
-  color: #DF744A;
-  border-radius: .3rem;
-  margin-left: .2rem;
-  margin-right: .2rem;
-  padding-left: .2rem;
-  padding-right: .2rem
+code, pre {
+	font-size: 0.8em;
+	font-family: 'Roboto Mono', Monaco, courier, monospace;
+	color: #DF744A;
 }
 
 pre {
-  font-size: 0.8em;
-  background-color: #f8f8f8;
-  font-family: 'Roboto Mono', Monaco, courier, monospace;
-  color: #DF744A;
-  border-radius: .3rem;
+	background-color: #F7F7F7;
+}
+
+code {
+	background-color: #FEDCD2;
+	border-radius: .3rem;
+	margin-left: .2rem;
+	margin-right: .2rem;
+	padding-left: .2rem;
+	padding-right: .2rem
 }
 
 .highlight {
-    position: relative;
-    width: 90%;
-    margin: 1em auto;
-    border-radius: 2px;
-    line-height: 1.1em;
-    background-color: #f8f8f8;
-    overflow-x: auto;
-    table, tr, td {
-        width: 100%;
-        border-collapse: collapse;
-        padding: 0;
-        margin: 0;
-    }
-    .gutter {
-      // display: none;
-      width: 5%;
-      pre {
-        // padding: 1.2em 1.4em;
-        line-height: 1.5em;
-        margin: 0;
-        .line {
-          width: auto;
-          height: 18px;
-        }
-      }
-    }
-    .code pre {
-        padding: 1.2em 1.4em;
-        line-height: 1.5em;
-        margin: 0;
-        .line {
-            width: auto;
-            height: 18px;
-        }
-    }
+	position: relative;
+	width: 90%;
+	margin: 1em auto;
+	line-height: 1.1em;
+	background-color: #f8f8f8;
+	overflow-x: auto;
+	table, tr, td {
+		width: 100%;
+		border-collapse: collapse;
+		padding: 0;
+		margin: 0;
+	}
+	.gutter {
+		width: 5%;
+		pre {
+			line-height: 1.5em;
+			margin: 0;
+			.line {
+				width: auto;
+				height: 18px;
+			}
+		}
+	}
+	.code pre {
+		padding: 1.2em 1.4em;
+		line-height: 1.5em;
+		margin: 0;
+		background-color: $color-black;
+		color: #f7f7f7;
+		.line {
+			width: auto;
+			height: 18px;
+		}
+		.marked {
+			background-color: #f8f8f8;
+			color: $color-black;
+		}
+	}
 }
 
 %code-base {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ccc;
-    text-align: right;
-    font-size: 0.75em;
-    padding: 5px 10px 0;
-    line-height: 15px;
-    height: 15px;
-    font-weight: 600;
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: #ccc;
+		text-align: right;
+		font-size: 0.75em;
+		padding: 5px 10px 0;
+		line-height: 15px;
+		height: 15px;
+		font-weight: 600;
 }
 
 @mixin code-signs($keys) {
-    @each $key in $keys {
-        .highlight.#{$key} .code:after {
-            content: to-upper-case($key);
-            @extend %code-base;
-        }
-    }
+		@each $key in $keys {
+				.highlight.#{$key} .code:after {
+						content: to-upper-case($key);
+						@extend %code-base;
+				}
+		}
 }
 
 $signs: ("html", "js", "javascript", "bash", "css", "scss","diff", "java", "xml", "python", "json", "swift", "ruby", "perl", "php", "c", "java", "cpp", "ts");
 @include code-signs($signs);
 
 .highlight.cpp .code:after {
-    content: 'C++';
+		content: 'C++';
 }
 
 pre {
-    color: #525252;
-    .function .keyword,
-    .constant {
-       color: #0092db;
-    }
-    .keyword,
-    .attribute {
-        color: #e96900;
-    }
-    .number,
-    .literal {
-        color: #ae81ff;
-    }
-    .tag,
-    .tag .title,
-    .change,
-    .winutils,
-    .flow,
-    .lisp .title,
-    .clojure .built_in,
-    .nginx .title,
-    .tex .special {
-        color: #2973b7;
-    }
-    .symbol,
-    .symbol .string,
-    .value,
-    .regexp {
-        color: #42b983;
-    }
-    .title {
-        color: #83B917;
-    }
-    .tag .value,
-    .string,
-    .subst,
-    .haskell .type,
-    .preprocessor,
-    .ruby .class .parent,
-    .built_in,
-    .sql .aggregate,
-    .django .template_tag,
-    .django .variable,
-    .smalltalk .class,
-    .javadoc,
-    .django .filter .argument,
-    .smalltalk .localvars,
-    .smalltalk .array,
-    .attr_selector,
-    .pseudo,
-    .addition,
-    .stream,
-    .envvar,
-    .apache .tag,
-    .apache .cbracket,
-    .tex .command,
-    .prompt {
-        color: #42b983;
-    }
-    .comment,
-    .java .annotation,
-    .python .decorator,
-    .template_comment,
-    .pi,
-    .doctype,
-    .shebang,
-    .apache .sqbracket,
-    .tex .formula {
-        color: #b3b3b3;
-    }
-    .deletion {
-        color: #BA4545;
-    }
-    .coffeescript .javascript,
-    .javascript .xml,
-    .tex .formula,
-    .xml .javascript,
-    .xml .vbscript,
-    .xml .css,
-    .xml .cdata {
-        opacity: 0.5;
-    }
+	color: #525252;
+	.function .keyword,
+	.constant {
+			color: #0092db;
+	}
+	.keyword,
+	.attribute {
+			color: #e96900;
+	}
+	.number,
+	.literal {
+			color: #ae81ff;
+	}
+	.tag,
+	.tag .title,
+	.change,
+	.winutils,
+	.flow,
+	.lisp .title,
+	.clojure .built_in,
+	.nginx .title,
+	.tex .special {
+			color: #2973b7;
+	}
+	.symbol,
+	.symbol .string,
+	.value,
+	.regexp {
+			color: #42b983;
+	}
+	.title {
+			color: #83B917;
+	}
+	.tag .value,
+	.string,
+	.subst,
+	.haskell .type,
+	.preprocessor,
+	.ruby .class .parent,
+	.built_in,
+	.sql .aggregate,
+	.django .template_tag,
+	.django .variable,
+	.smalltalk .class,
+	.javadoc,
+	.django .filter .argument,
+	.smalltalk .localvars,
+	.smalltalk .array,
+	.attr_selector,
+	.pseudo,
+	.addition,
+	.stream,
+	.envvar,
+	.apache .tag,
+	.apache .cbracket,
+	.tex .command,
+	.prompt {
+			color: #42b983;
+	}
+	.comment,
+	.java .annotation,
+	.python .decorator,
+	.template_comment,
+	.pi,
+	.doctype,
+	.shebang,
+	.apache .sqbracket,
+	.tex .formula {
+			color: #b3b3b3;
+	}
+	.deletion {
+			color: #BA4545;
+	}
+	.coffeescript .javascript,
+	.javascript .xml,
+	.tex .formula,
+	.xml .javascript,
+	.xml .vbscript,
+	.xml .css,
+	.xml .cdata {
+			opacity: 0.5;
+	}
 }

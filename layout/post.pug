@@ -9,8 +9,9 @@ block description
 
 block content
 	include _mixins/post
+	if toc(page.content)
+		aside.toc!= toc(page.content)
 	+post(page)
-	aside.toc!= toc(page.content)
 
 block pagination
 	include _mixins/paginator

@@ -1,6 +1,7 @@
 div.navbar
 	a.logo(href="/")
-		img(src=theme.logo alt="theme.logo")
+		if theme.logo
+			img(src=theme.logo alt="make sure _config.yml's logo avalidable")
 		span.author!= config.author
 	nav
 		each value, key in theme.menu

@@ -1,9 +1,24 @@
-extends _partial/layout
+doctype html
+html(lang=config.language)
+	head
+		include _partial/head
+	body
+		header
+			include _partial/header
+		main.content(style="flex-direction: column")
+			if site.categories.lenght !== 0
+				div.categories
+						h2.archive-year!= __('categories')
+						!= list_categories(site.categories, { style: 'a', separator: '=>' })
+			if site.tags.lenght !== 0
+				div.tags
+					h2.archive-year!= __('tags')
+					!= list_tags(site.tags, { style: 'a', separator: ',' })
+			include _mixins/archive
+			+postList()
 
-block content
-	include _mixins/post
-	+postList()
+		footer
+			include _mixins/paginator
+			+homePaginator()
+			include _partial/copyright
 
-block pagination
-	include _mixins/paginator
-	+homePaginator()
