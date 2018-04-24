@@ -1,6 +1,6 @@
 # hexo-theme-smash
 
- 🍭 A colorful hexo theme -- Smash! Inspired by [hexo-theme-apollo](https://github.com/pinggod/hexo-theme-apollo)
+ 🍭 A colorful hexo theme -- Smash! Support IE 11+. Styles inspired by [hexo-theme-apollo](https://github.com/pinggod/hexo-theme-apollo)
 
  ![screenshot](https://raw.githubusercontent.com/hexojs/site/master/source/themes/screenshots/hexo-theme-smash.png)
 
