@@ -1,10 +1,10 @@
 # hexo-theme-smash
 
- 🍭 A colorful hexo theme -- Smash! Support IE 11+. Styles inspired by [hexo-theme-apollo](https://github.com/pinggod/hexo-theme-apollo)
+ 🍭 A colorful hexo theme -- Smash! Support IE 11+.
 
  ![screenshot](https://raw.githubusercontent.com/hexojs/site/master/source/themes/screenshots/hexo-theme-smash.png)
 
- <div align="center"><a href="http://venusworld.cn/hexo-theme-smash">Live Demo</a></div>
+ <div align="center"><a href="https://bbbbx.github.io/hexo-theme-smash">Live Demo</a></div>
 
  ## Install
 
