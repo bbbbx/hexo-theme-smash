@@ -2,7 +2,7 @@
 
  🍭 A colorful hexo theme -- Smash! Support IE 11+.
 
- ![screenshot](https://raw.githubusercontent.com/hexojs/site/master/source/themes/screenshots/hexo-theme-smash.png)
+ ![screenshot](https://raw.githubusercontent.com/hexojs/site/master/source/themes/screenshots/smash.png)
 
  <div align="center"><a href="https://bbbbx.github.io/hexo-theme-smash">Live Demo</a></div>
 
